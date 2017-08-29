@@ -1,8 +1,10 @@
 #If you come from bash you might have to change your $PATH.
  export PATH=$HOME/bin:/usr/local/bin:$PATH
- export PATH=$PATH:~/homebrew/bin
  export PATH=$PATH:~/Applications/anaconda/bin
-#
+ export PATH=$PATH:~/homebrew/bin
+ export PATH=$PATH:/Users/tb15/homebrew/share/pypy
+#Change the directory in which brew installs casks to
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications --fontdir=~/Library/Fonts"
 # # Path to your oh-my-zsh installation.
  export ZSH=$HOME/.oh-my-zsh
 #
