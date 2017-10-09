@@ -1,7 +1,7 @@
 #If you come from bash you might have to change your $PATH.
+ export PATH=$PATH:~/homebrew/bin
  export PATH=$HOME/bin:/usr/local/bin:$PATH
  export PATH=$PATH:~/Applications/anaconda/bin
- export PATH=$PATH:~/homebrew/bin
  export PATH=$PATH:/Users/tb15/homebrew/share/pypy
 #Change the directory in which brew installs casks to
 export HOMEBREW_CASK_OPTS="--appdir=~/Applications --fontdir=~/Library/Fonts"
@@ -87,6 +87,8 @@ source $ZSH/oh-my-zsh.sh
 # # Example aliases
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
+## Alias vim to be brew's vim
+alias vim="~/homebrew/bin/vim"
 export PATH="/Users/tb15/homebrew/opt/openssl@1.1/bin:$PATH"
 source <(antibody init)
 
@@ -107,3 +109,20 @@ then
         tmux attach-session -t "$ID"
     fi
 fi
+
+# In order for gpg to find gpg-agent, gpg-agent must be running, and there must be an env
+# # variable pointing GPG to the gpg-agent socket. This little script, which must be sourced
+# # in your shell's init script (ie, .bash_profile, .zshrc, whatever), will either start
+# # gpg-agent or set up the GPG_AGENT_INFO variable if it's already running.
+
+# # Add the following to your shell init to set up gpg-agent automatically for every shell
+#if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
+        #source ~/.gnupg/.gpg-agent-info
+        #export GPG_AGENT_INFO
+#else
+        #eval $(gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf --write-env-file ~/.gnupg/.gpg-agent-info)
+#fi
+#export PATH="/Users/tb15/homebrew/opt/gpg-agent/bin:$PATH"
+
+#Fix gpg issues
+export GPG_TTY=$(tty)
