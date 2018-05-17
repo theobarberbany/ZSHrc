@@ -1,13 +1,16 @@
 #If you come from bash you might have to change your $PATH.
- export PATH=$PATH:~/homebrew/bin
- export PATH=$HOME/bin:/usr/local/bin:$PATH
- export PATH=$PATH:~/Applications/anaconda/bin
- export PATH=$PATH:/Users/tb15/homebrew/share/pypy
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$HOME/Library/Haskell/bin:$PATH"
+export PATH=$PATH:~/Applications/anaconda/bin
+export PATH=$PATH:~/go/bin
 #Change the directory in which brew installs casks to
 export HOMEBREW_CASK_OPTS="--appdir=~/Applications --fontdir=~/Library/Fonts"
 # # Path to your oh-my-zsh installation.
- export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
+export GOPATH="/Users/tb15/go"
+export GOROOT=/usr/local/opt/go/libexec
 #
+# B
 # # Set name of the theme to load. Optionally, if you set this to "random"
 # # it'll load a random theme each time that oh-my-zsh is loaded.
 # # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -58,6 +61,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git)
 #
 source $ZSH/oh-my-zsh.sh
+
 #
 # # User configuration
 #
@@ -88,15 +92,8 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 ## Alias vim to be brew's vim
-alias vim="~/homebrew/bin/vim"
-export PATH="/Users/tb15/homebrew/opt/openssl@1.1/bin:$PATH"
 source <(antibody init)
 
-PATH="/Users/tb15/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/Users/tb15/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/Users/tb15/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/Users/tb15/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/tb15/perl5"; export PERL_MM_OPT;
 
 ## Automatically launch tmux
 if [[ -z "$TMUX" ]]
@@ -122,7 +119,13 @@ fi
 #else
         #eval $(gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf --write-env-file ~/.gnupg/.gpg-agent-info)
 #fi
-#export PATH="/Users/tb15/homebrew/opt/gpg-agent/bin:$PATH"
 
 #Fix gpg issues
-export GPG_TTY=$(tty)
+#export GPG_TTY=$(tty)
+
+# added by travis gem
+[ -f /Users/tb15/.travis/travis.sh ] && source /Users/tb15/.travis/travis.sh
+#Aliases
+source $HOME/.aliases
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
