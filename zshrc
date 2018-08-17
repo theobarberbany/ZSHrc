@@ -8,7 +8,7 @@ export HOMEBREW_CASK_OPTS="--appdir=~/Applications --fontdir=~/Library/Fonts"
 # # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export GOPATH="/Users/tb15/go"
-export GOROOT=/usr/local/opt/go/libexec
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 #
 # B
 # # Set name of the theme to load. Optionally, if you set this to "random"
