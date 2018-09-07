@@ -82,7 +82,6 @@ alias ohmyzsh="mate ~/.oh-my-zsh"
 ## Alias vim to be brew's vim
 source <(antibody init)
 
-
 ## Automatically launch tmux
 if [[ -z "$TMUX" ]]
 then
@@ -116,3 +115,5 @@ fi
 #Aliases
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# source profile 
+source ~/.profile
