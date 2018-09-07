@@ -1,17 +1,5 @@
-#If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$HOME/Library/Haskell/bin:$PATH"
-export PATH=$PATH:~/Applications/anaconda/bin
-export PATH=$PATH:~/go/bin
-#Change the directory in which brew installs casks to
-export HOMEBREW_CASK_OPTS="--appdir=~/Applications --fontdir=~/Library/Fonts"
 # # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export GOPATH="/Users/tb15/go"
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
-#
-# B
-# # Set name of the theme to load. Optionally, if you set this to "random"
 # # it'll load a random theme each time that oh-my-zsh is loaded.
 # # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
  ZSH_THEME="robbyrussell"
@@ -126,6 +114,5 @@ fi
 # added by travis gem
 [ -f /Users/tb15/.travis/travis.sh ] && source /Users/tb15/.travis/travis.sh
 #Aliases
-source $HOME/.aliases
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
